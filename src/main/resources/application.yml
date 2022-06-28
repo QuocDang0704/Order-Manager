@@ -1,0 +1,16 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: order-manager
+
+  datasource:
+    url: jdbc:mysql://159.223.79.247:3306/quoc_quocdb3-fis
+    username: root
+    password: quanla02@ciuz
+    jpa:
+      show-sql: true
+      #generate-ddl: true
+  jpa:
+    hibernate:
+      ddl-auto: update
