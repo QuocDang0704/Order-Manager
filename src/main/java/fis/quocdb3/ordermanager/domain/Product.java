@@ -16,12 +16,12 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name="name")
+    @Column(name="name", nullable = false, length = 100)
     private String name;
 
-    @Column(name="price")
+    @Column(name="price", nullable = false)
     private Double price;
 
-    @Column(name="avaiable")
+    @Column(name="avaiable", nullable = false)
     private Long avaiable;
 }

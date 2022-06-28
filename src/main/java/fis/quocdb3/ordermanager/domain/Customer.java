@@ -23,10 +23,10 @@ public class Customer {
     @Column(name = "name", length = 100)
     private String name;
 
-    @Column(name = "mobile", length = 10)
+    @Column(name = "mobile", nullable = false, length = 10, unique = true)
     private String mobile;
 
-    @Column(name = "address", length = 200)
+    @Column(name = "address", nullable = false, length = 100)
     private String address;
 
     @OneToMany(mappedBy = "customer", fetch = FetchType.LAZY)

@@ -49,7 +49,7 @@ public class CustomerServiceImpl implements CustomerService {
     public CustomerDTO update(CustomerUpdateDTO customerUpdate) {
         Customer customer = mapper.map(customerUpdate, Customer.class);
         customerRepository.save(customer);
-        return CustomerDTO.Mapper.fromEntity(customer);
+        return CustomerDTO.Mapper.fromEntity(customer   );
     }
 
     @Override

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.*;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
 
 @Entity
 @Setter
@@ -27,7 +28,8 @@ public class OrderItem {
     @JoinColumn(name="product_id", nullable = false)
     private Product product;
 
-    @Column(name="quantity")
+    @Min(0)
+    @Column(name="quantity", nullable = false)
     private Integer quantity;
 
     @Column(name="amount")

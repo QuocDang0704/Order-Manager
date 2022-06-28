@@ -4,7 +4,6 @@ import fis.quocdb3.ordermanager.domain.*;
 import fis.quocdb3.ordermanager.dto.order.CreateOrderDTO;
 import fis.quocdb3.ordermanager.dto.order.RemoveOrderItemDTO;
 import fis.quocdb3.ordermanager.exception.*;
-import fis.quocdb3.ordermanager.repository.CustomerRepository;
 import fis.quocdb3.ordermanager.repository.OrderItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -15,7 +14,6 @@ import fis.quocdb3.ordermanager.dto.order.OrderDTO;
 import fis.quocdb3.ordermanager.repository.OrderRepository;
 import fis.quocdb3.ordermanager.repository.ProductRepository;
 import fis.quocdb3.ordermanager.service.OrderService;
-import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
