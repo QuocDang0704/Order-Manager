@@ -1,3 +1,7 @@
+quoc:
+  jwtSecret: bezKoderSecretKey
+  jwtExpirationMs: 86400000
+
 server:
   port: 8080
 spring:
@@ -10,7 +14,8 @@ spring:
     password: quanla02@ciuz
     jpa:
       show-sql: true
-      #generate-ddl: true
+
   jpa:
     hibernate:
       ddl-auto: update
+

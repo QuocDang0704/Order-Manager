@@ -13,23 +13,28 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Table(name="tbl_customer")
+@Table(name = "tbl_customer")
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id")
+    @Column(name = "id")
     private Long id;
 
-    @Column(name="name", length = 100)
+    @Column(name = "name", length = 100)
     private String name;
 
-    @Column(name="mobile", length = 10)
+    @Column(name = "mobile", length = 10)
     private String mobile;
 
-    @Column(name="address", length = 200)
+    @Column(name = "address", length = 200)
     private String address;
 
     @OneToMany(mappedBy = "customer", fetch = FetchType.LAZY)
     @JsonIgnore
     private List<Order> orders;
+
+    private String username;
+    private String password;
+    @Enumerated(EnumType.STRING)
+    private Role role;
 }
