@@ -33,7 +33,7 @@ public class CustomerServiceImpl implements CustomerService {
     public CustomerDTO findById(Long id) {
         return CustomerDTO.Mapper.fromEntity(customerRepository.findById(id)
                 .orElseThrow(() -> {
-                    throw new CustomerNotFoundException("Can't not find customer by id:" +id);
+                    throw new CustomerNotFoundException("Can't not find customer by id:" + id);
                 })
         );
     }
@@ -41,18 +41,15 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public CustomerDTO create(CustomerCreateDTO customerCreate) {
         Customer customer = mapper.map(customerCreate, Customer.class);
-
-        return CustomerDTO.Mapper.fromEntity(
-                customerRepository.save(customer)
-        );
+        customer.setId(customerRepository.save(customer).getId());
+        return CustomerDTO.Mapper.fromEntity(customer);
     }
 
     @Override
     public CustomerDTO update(CustomerUpdateDTO customerUpdate) {
         Customer customer = mapper.map(customerUpdate, Customer.class);
-        return CustomerDTO.Mapper.fromEntity(
-                customerRepository.save(customer)
-        );
+        customerRepository.save(customer);
+        return CustomerDTO.Mapper.fromEntity(customer);
     }
 
     @Override
